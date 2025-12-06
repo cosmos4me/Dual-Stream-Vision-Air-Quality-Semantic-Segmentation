@@ -9,7 +9,7 @@ By leveraging an **asymmetric dual-stream encoder** and a **hierarchical fusion 
 | Metric | Value | Description |
 | :--- | :--- | :--- |
 | **mIoU** | **99.24%** | Mean Intersection over Union |
-| **Accuracy** | **99.37%** | Pixel-wise Accuracy |
+| **Weighted Ensenble** | **99.31%** | Mean Intersection over Union with Weighted Ensenble |
 | **Val Loss** | 0.0171 | Final Validation Loss |
 | **Train Loss**| 0.0099 | Final Training Loss |
 
@@ -19,7 +19,7 @@ This project utilizes the **"Satellite Image-based Air Quality Analysis Data"** 
 * **Source:** [AI Hub - Land Cover & Air Quality Dataset](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71805)
 * **Modalities:**
     * **Vision:** High-resolution Satellite Imagery ($512 \times 512$)
-    * **Air:** GEMS Satellite Data + Ground Stations ($64 \times 64 \times 12*4$) (GEMS/NO2/SO2/CO2)
+    * **Air:** GEMS Satellite Data + Ground Stations ($64 \times 64 \times 12*4$) (GEMS/NO2/SO2/CO)
 
 ## 🏗️ System Architecture
 
@@ -71,3 +71,5 @@ FOCAL_WEIGHT = 0.5
 LOVASZ_WEIGHT = 0.5
 AUX_LOSS_WEIGHTS = {'final': 1.0, 'f2': 0.3, 'f3': 0.15}
 ```
+
+Hardware: Tesla T4 GPU (Google Colab)
