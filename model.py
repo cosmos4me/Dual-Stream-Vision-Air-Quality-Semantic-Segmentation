@@ -246,7 +246,7 @@ class ASPPDecoder(nn.Module):
         x_up_256 = self.up_conv_1(x_final_refine)
         x_up_512 = self.up_conv_2(x_up_256)      
         x_refined_512 = self.boundary_refine(x_up_512)
-        logits_final = self.final_classifier_v8(x_up_512) 
+        logits_final = self.final_classifier_v8(x_up_512) #same miou with refinement module or not (we can ensenble those two model)
 
         return {"final": logits_final, "aux_f2": logits_aux_f2, "aux_f3": logits_aux_f3}
 
